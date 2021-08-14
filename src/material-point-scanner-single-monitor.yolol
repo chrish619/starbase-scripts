@@ -1,0 +1,18 @@
+// Material Point Scanner - ChrisH619 (Chrisanthynol)
+:Reset=1 :Index=0 n="\n" ro=" Ore" rc=" Crystal" u="Nothing Detected!"
+IF :Scan==0 THEN :Results="OFF" goto2 END :Scanning=1
+IF :Scanning==1 THEN goto2+(:Scan*2) END c=:Count ix=0 s=""
+IF c==0 THEN :Results=u goto2 END
+:Index=ix s+=:Material-ro-rc+n+:Volume+n ix++
+IF ix<c THEN goto6 END :Results=s
+
+
+
+// Pad for ~1s before clearing & re-reading
+goto2
+
+// On Material Point Scanner, change the following fields:
+// Active => Scan, ScanResults => Count, Scan => Scanning
+
+// Add a Button for 'Scan'
+// Add a TextDisplays, 'Results'
