@@ -1,0 +1,12 @@
+// Material Point Scanner - ChrisH619 (Chrisanthynol)
+:MPS_Reset=1 to=5 t=0 ss=1728 ix=0 r="" n="\n" p=" | "
+ro=" Ore" rc=" Crystal" ri="ium" rk="ite" u="Nothing Detected!"
+IF :MPS==0 THEN :Scanner=n+"OFF" goto2 END :MPS_Scan=1
+t++ IF :MPS_Scan==1 THEN goto3+(:MPS AND t<to)*2 END c=:MPR_Count
+IF c==0 THEN :Scanner=n+u goto9 END :MPR_Index=ix s=:MPR_Vol/ss 
+s+=0.5 s=(s/1000)*1000 r+=:MPR_Mat-ro-rc-ri-rk+p+s+n
+ix++ IF ix<c THEN goto6 END :Scanner=r
+
+
+// Pad for ~1s before re-reading
+goto2
