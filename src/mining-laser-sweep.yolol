@@ -1,0 +1,11 @@
+// Single Mining Turntable Turret - ChrisH619 (Chrisanthynol)
+perstep=2 min=-8 max=8
+:MLOn=0 ix=0 s=1 :LTR=0 IF :Laser==0 THEN goto2 END
+:MLOn=0 IF :Laser==0 THEN goto2 END ix+=s next=ix*perstep
+:MLOn=1 :LTR=next IF next<=min OR next>=max THEN s*=-1 END goto4
+
+// Add a Button for `Laser`
+// Uses any number of Turntables `TurretRotation` => `LTR`
+// Uses any number of Mining Lasers `MiningLaserOn` => `MLOn`
+
+// Moves the turrent from -8degrees -> 8degrees, at 2degree increments 
