@@ -13,6 +13,7 @@ goto2
 
 // On Material Point Scanner, change the following fields:
 // Active => Scan, ScanResults => Count, Scan => Scanning
+//  Material => Mat, Volume => Vol
 
 // Add a Button for 'Scan'
 // Add a TextDisplay 'Scanner'
