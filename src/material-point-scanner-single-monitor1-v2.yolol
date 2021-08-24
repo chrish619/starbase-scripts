@@ -1,11 +1,11 @@
 // Material Point Scanner - ChrisH619 (Chrisanthynol)
-:Reset=1 to=5 t=0 ss=1728 ix=0 r="" n="\n" p=" | "
-ro=" Ore" rc=" Crystal" ri="ium" rk="ite" u="Nothing Detected!"
-IF :Scan==0 THEN :Scanner=n+"OFF" goto2 END :Scanning=1
-t++ IF :Scanning==1 THEN goto2+(:Scan AND t<to)*3 END c=:Count
-IF c==0 THEN :Scanner=n+u goto9 END :Index=ix s=:Volume/ss 
-s+=0.5 s=(s/1000)*1000 r+=:Material-ro-rc-ri-rk+p+s+n
-ix++ IF ix<c THEN goto6 END :Scanner=r
+ss=1728 n="\n" ro=" Ore" rc=" Crystal" ri="ite" rm="ium" d=" | " t=5
+:Reset=1 :Index=0 so="OFF" sn="Nothing Detected!" sp="Scanning..."
+IF :Scan==0 THEN :Scanner=so goto2 END :Scanning=1 :Scanner=sp i=0
+to++ IF :Scanning==1 THEN goto2+(:Scan-to<t)*3 END c=:Count to=0
+IF c==0 THEN :Scanner=sn goto2 END
+:Index=ix sc=:Vol/ss sc=(sc/100)*100 r+=:Mat-ro-rc-ri-rm+d+sc+n
+ix++ :Scanner=r IF ix<c THEN goto7 END
 
 
 // Pad for ~1s before re-reading
