@@ -15,4 +15,4 @@ goto2
 // Active => Scan, ScanResults => Count, Scan => Scanning
 
 // Add a Button for 'Scan'
-// Add a TextDisplay 'Results'
+// Add a TextDisplay 'Scanner'
